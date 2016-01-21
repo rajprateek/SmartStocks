@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+	<script type="text/javascript" src="http:////cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.4/socket.io.js"></script>
+
+
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href= "{{ url_for('static',filename='css/main.css') }}"  />
+
+		<script src= "{{ url_for('static',filename='js/index.js') }}" ></script>
+
+
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>SmartStocks</h1>
+				<p> Investing made easy</p>
+			</header>
+			<div style="text-align:center;" >
+				<input  type="text" name="email" id="stock_symbol" placeholder="Enter Symbol to add to your watchlist!" />	
+
+				<button type="button"  id = "search" style="margin-top:1em;">GO</button>
+			
+              <table class="table" id = "stockTable" border="1" style="margin-top:3em; margin-left:12.5%; width:75%; " >
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>Current Price</th>
+                    <th>Prediction</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                      <!-- <tr>
+                          <th >Total: </th>
+                          <th id="total" ></th>
+                      </tr> -->
+                  </tbody>
+              </table>              
+              </div>
+              <div style="margin-top: 10em; margin-left:35%">
+              	<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Twitter</span></a></li>
+
+					<!-- <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+<!-- 					<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+ -->					<li><a href="mailto:smartstocks@onesync.me" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; SmartStocks.</li><li>Created by Raj, Tanay & Ishaan</li>
+				</ul>
+			</footer>
+              </div>
+
+		<!-- Footer -->
+			
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+	</body>
+</html>

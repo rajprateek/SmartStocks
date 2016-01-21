@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta name="author" content="Ishaan Grover (Intern spring 2014 - iSensor Team)">
+    <title>Live Data</title>
+</head>
+
+<body>
+    <input type="text" name="end_date" id="stock_name" placeholder="Enter Stock Name"/>
+    <button type="button" name="submit" id="search">submit</input>
+
+
+    <script type="text/javascript" src="http:////cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.4/socket.io.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $( document ).ready(function(){
+        console.log("doc ready");
+        var socket = io.connect('http://localhost:5000');
+        socket.on("connect", function () {  
+            console.log("Connected!");
+        });
+
+
+
+
+        socket.on("answer", function(answer) {  
+            console.log(answer);
+        });
+
+        document.getElementById("search").addEventListener("click", function(){
+            var textBox = document.getElementById('stock_name').value;
+            console.log(textBox)
+            socket.emit("get_stock", textBox);
+        });
+
+
+    });
+
+    </script>
+</body>
+</html>
